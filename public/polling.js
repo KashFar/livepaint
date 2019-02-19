@@ -1,5 +1,4 @@
 // Add logic to this script to poll server every second for updated pixels.
-
 let clientSequence = 0    // represents where client is at regarding master list
 const clientUpdates = []    // everything client done in last second
 

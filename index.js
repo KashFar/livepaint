@@ -9,7 +9,7 @@ let updates = []
 
 // Fill in your request handlers here
 /* req.body
-        clienpm emotntUpdates: Array<SetColor>
+        clienp\tm emotntUpdates: Array<SetColor>
         clientSequence: number
     res.body
         updates: Array<SetColor>
@@ -23,7 +23,7 @@ app.post("/updates", (req, res) => {
     const clientUpdates = req.body.clientUpdates
     const clientSequence = req.body.clientSequence
 
-    updates = [...pollForUpdates , ...clientUpdates]
+    updates = [...updates , ...clientUpdates]
     // same as updates.concat(clientUpdates), above code creates a new array though
     res.send({
         updates: updates.slice(clientSequence),
