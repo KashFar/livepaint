@@ -9,7 +9,7 @@ let updates = []
 
 // Fill in your request handlers here
 /* req.body
-        clientUpdates: Array<SetColor>
+        clienpm emotntUpdates: Array<SetColor>
         clientSequence: number
     res.body
         updates: Array<SetColor>

@@ -1,7 +1,6 @@
 {
   "name": "livepaint",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +8,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
-  }
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/KashF/livepaint.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://gitlab.com/KashF/livepaint/issues"
+  },
+  "homepage": "https://gitlab.com/KashF/livepaint#readme",
+  "description": ""
 }
