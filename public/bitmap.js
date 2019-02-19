@@ -8,10 +8,10 @@ function Bitmap(width, height) {
 }
 
 Bitmap.prototype.render = function(target_element) {
-    this.cells = [];
+    this.cells = []
     for(var row = 0; row < this.grid.length; row++) {
         var row_div = document.createElement("div");
-        var cell_refs = [];
+        var cell_refs = []
         row_div.className = "bmp_row";
         for(var col = 0; col < this.grid[row].length; col++) {
             var cell = document.createElement("div");
@@ -26,11 +26,14 @@ Bitmap.prototype.render = function(target_element) {
         target_element.appendChild(row_div);
         this.cells.push(cell_refs);
     }
-};
+}
 
-Bitmap.prototype.setColor = function(row, col, color) {
+Bitmap.prototype.setColor = function(row, col, color, localChange = true) {
     this.grid[row][col] = color;
     this.cells[row][col].style.background = color;
+    if (localChange){
+        clientUpdates.push([row, col, color])
+    }
 }
 
 Bitmap.prototype.handleEvent = function(event) {

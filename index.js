@@ -6,6 +6,7 @@ app.use(express.static('public'))
 app.use(express.json())
 
 let updates = []
+
 // Fill in your request handlers here
 /* req.body
         clientUpdates: Array<SetColor>
@@ -17,9 +18,19 @@ let updates = []
         Array<number, number, string>
 
 */
-app.post('/updates', (req, res) => {
-// ...
 
+app.post("/updates", (req, res) => {
+    const clientUpdates = req.body.clientUpdates
+    const clientSequence = req.body.clientSequence
+
+    updates = [...pollForUpdates , ...clientUpdates]
+    // same as updates.concat(clientUpdates), above code creates a new array though
+    res.send({
+        updates: updates.slice(clientSequence),
+        sequence: updates.length
+    })
 })
 
-app.listen(port)
+app.listen(port, () => {
+    console.log(`App started on port ${port} !`)
+})
